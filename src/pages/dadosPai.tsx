@@ -73,7 +73,7 @@ export default function DadosPai({ dado, setDados }: Props) {
                 <input
                   type="text"
                   name="nomePai"
-                  required
+                  
                   onChange={(e) => salvaDados(e, setDados)}
                 />
               </div>
@@ -83,7 +83,7 @@ export default function DadosPai({ dado, setDados }: Props) {
                 <input
                   type="text"
                   name="nacionalidadePai"
-                  required
+                  
                   onChange={(e) => salvaDados(e, setDados)}
                 />
               </div>
@@ -93,7 +93,7 @@ export default function DadosPai({ dado, setDados }: Props) {
                 <input
                   type="text"
                   name="naturalidadePai"
-                  required
+                  
                   onChange={(e) => salvaDados(e, setDados)}
                 />
               </div>
@@ -105,7 +105,7 @@ export default function DadosPai({ dado, setDados }: Props) {
                 <label htmlFor=""> Uf*</label>
               
               <select name="ufPai"
-  required
+  
   
   onChange={(e) => salvaDados(e, setDados)}
 >
@@ -147,7 +147,7 @@ export default function DadosPai({ dado, setDados }: Props) {
                 <input
                   type="date"
                   name="dataDeNascimentoPai"
-                  required
+                  
                   onChange={(e) => salvaDados(e, setDados)}
                 />
               </div>
@@ -157,7 +157,7 @@ export default function DadosPai({ dado, setDados }: Props) {
                 <input
                   type="text"
                   name="profissaoPai"
-                  required
+                  
                   onChange={(e) => salvaDados(e, setDados)}
                 />
               </div>
@@ -173,7 +173,7 @@ export default function DadosPai({ dado, setDados }: Props) {
                 <label>CPF *</label>
                 <input
                   name="cpfPai"
-                  required
+                  
                   onChange={(e) => {
                     e.target.value = mascaraCPF(e.target.value);
                     salvaDados(e, setDados);
@@ -186,7 +186,7 @@ export default function DadosPai({ dado, setDados }: Props) {
                 <input
                   type="text"
                   name="rgPai"
-                  required
+                  
                   onChange={(e) => salvaDados(e, setDados)}
                 />
               </div>
@@ -196,7 +196,7 @@ export default function DadosPai({ dado, setDados }: Props) {
                 <input
                   type="text"
                   name="orgaoEmissorPai"
-                  required
+                  
                   onChange={(e) => salvaDados(e, setDados)}
                 />
               </div>
@@ -206,7 +206,7 @@ export default function DadosPai({ dado, setDados }: Props) {
                 <input
                   type="date"
                   name="dataExpedicaoPai"
-                  required
+                  
                   onChange={(e) => salvaDados(e, setDados)}
                 />
               </div>
@@ -222,7 +222,7 @@ export default function DadosPai({ dado, setDados }: Props) {
                 <label>Telefone *</label>
                 <input
                   name="telefonePai"
-                  required
+                  
                   onChange={(e) => {
                     e.target.value = mascaraTelefone(e.target.value);
                     salvaDados(e, setDados);
@@ -234,11 +234,11 @@ export default function DadosPai({ dado, setDados }: Props) {
                 <label>WhatsApp *</label>
                 <input
                   name="whatsappPai"
-                  required
+                  
                   onChange={(e) => {
                     e.target.value = mascaraTelefone(e.target.value);
                     salvaDados(e, setDados);
-                  }}
+                  }}z
                 />
               </div>
 

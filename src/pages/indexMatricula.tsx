@@ -35,11 +35,7 @@ export default function DadosAluno({ dado, setDados }: Props) {
       .replace(/(\d{5})(\d)/, "$1-$2");
   };
 
-  const mascaraCEP = (valor: string) => {
-    return valor
-      .replace(/\D/g, "")
-      .replace(/(\d{5})(\d)/, "$1-$2");
-  };
+
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -190,20 +186,9 @@ console.log("tipo:", typeof setDados);
                     salvaDados(e, setDados);
                   }}
                 />
-              </div>
+              </div>            
 
               
-
-              <div className="field">
-                <label>CEP</label>
-                <input
-                  name="cepAluno"
-                  onChange={(e) => {
-                    e.target.value = mascaraCEP(e.target.value);
-                    salvaDados(e, setDados);
-                  }}
-                />
-              </div>
 
               <div className="field">
                 <label>RG</label>
