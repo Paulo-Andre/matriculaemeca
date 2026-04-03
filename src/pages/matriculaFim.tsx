@@ -1,5 +1,5 @@
 
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 function DuvidasMatricula() {
@@ -182,9 +182,10 @@ function DuvidasMatricula() {
           <img src="/logo1.png" alt="Logo" className="matricula-logo" />
 
           <nav className="matricula-nav">
-            <Link to="/Matricula" className="matricula-btn-nav">
-                Login
-              </Link>
+           <nav className="matricula-nav">
+            
+              <a href="https://emeca.pythonanywhere.com/"className="matricula-btn-nav">  Login</a>
+          </nav>
           </nav>
         </div>
       </header>

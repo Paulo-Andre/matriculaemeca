@@ -183,9 +183,8 @@ function DuvidasMatricula() {
           <img src="/logo1.png" alt="Logo" className="matricula-logo" />
 
           <nav className="matricula-nav">
-            <Link to="/Matricula" className="matricula-btn-nav">
-                Login
-              </Link>
+            
+              <a href="https://emeca.pythonanywhere.com/"className="matricula-btn-nav">  Login</a>
           </nav>
         </div>
       </header>
