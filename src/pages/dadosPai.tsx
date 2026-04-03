@@ -238,7 +238,7 @@ export default function DadosPai({ dado, setDados }: Props) {
                   onChange={(e) => {
                     e.target.value = mascaraTelefone(e.target.value);
                     salvaDados(e, setDados);
-                  }}z
+                  }}
                 />
               </div>
 
