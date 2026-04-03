@@ -20,15 +20,7 @@ export default function DadosEndereco({ dado, setDados }: Props) {
       .slice(0, 9);
   };
 
-  // 🔹 (CASO PRECISE DE CPF NO FUTURO)
-  const mascaraCPF = (valor: string) => {
-    return valor
-      .replace(/\D/g, "")
-      .replace(/(\d{3})(\d)/, "$1.$2")
-      .replace(/(\d{3})(\d)/, "$1.$2")
-      .replace(/(\d{3})(\d{1,2})$/, "$1-$2")
-      .slice(0, 14);
-  };
+
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
