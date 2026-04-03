@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route ,Navigate} from "react-router-dom";
 import { useState } from "react";
 import { estadoInicial } from "../components/useState_SalvandoDados/salvandoDadosUseState";
 
@@ -56,6 +56,7 @@ export default function AppRoutes() {
         element={<DuvidasMatricula />}
         
       />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
