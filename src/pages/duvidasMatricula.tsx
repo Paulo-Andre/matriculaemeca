@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-
+import { Link } from "react-router-dom";
+/////
 function DuvidasMatricula() {
   const [confirmado, setConfirmado] = useState(false);
 
