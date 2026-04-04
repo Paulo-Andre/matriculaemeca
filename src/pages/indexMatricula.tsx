@@ -20,20 +20,53 @@ export default function DadosAluno({ dado, setDados }: Props) {
   const [mostrarIrmao, setMostrarIrmao] = useState(false);
 
   // MÁSCARAS
-  const mascaraCPF = (valor: string) => {
-    return valor
-      .replace(/\D/g, "")
-      .replace(/(\d{3})(\d)/, "$1.$2")
-      .replace(/(\d{3})(\d)/, "$1.$2")
-      .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-  };
+const mascaraCPF = (valor: string): string => {
+  return valor
+    .replace(/\D/g, "") // remove tudo que não é número
+    .slice(0, 11) // limita a 11 dígitos
+    .replace(/(\d{3})(\d)/, "$1.$2")
+    .replace(/(\d{3})(\d)/, "$1.$2")
+    .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+};
+const validarCPF = (cpf: string): boolean => {
+  cpf = cpf.replace(/\D/g, "");
 
-  const mascaraTelefone = (valor: string) => {
-    return valor
-      .replace(/\D/g, "")
-      .replace(/(\d{2})(\d)/, "($1) $2")
-      .replace(/(\d{5})(\d)/, "$1-$2");
-  };
+  if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+
+  let soma = 0;
+  let resto;
+
+  for (let i = 1; i <= 9; i++) {
+    soma += parseInt(cpf[i - 1]) * (11 - i);
+  }
+
+  resto = (soma * 10) % 11;
+  if (resto >= 10) resto = 0;
+  if (resto !== parseInt(cpf[9])) return false;
+
+  soma = 0;
+  for (let i = 1; i <= 10; i++) {
+    soma += parseInt(cpf[i - 1]) * (12 - i);
+  }
+
+  resto = (soma * 10) % 11;
+  if (resto >= 10) resto = 0;
+
+  return resto === parseInt(cpf[10]);
+};
+const [cpf, setCpf] = useState("");
+
+const handleCPF = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const valor = mascaraCPF(e.target.value);
+  setCpf(valor);
+
+  if (valor.replace(/\D/g, "").length === 11) {
+    if (!validarCPF(valor)) {
+      console.log("CPF inválido");
+    }
+  }
+};
+ 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -174,17 +207,15 @@ console.log("tipo:", typeof setDados);
               </div>
 
               <div className="field">
-                <label>CPF *</label>
-                <input
-                  name="cpfDoAluno"
-                  required
-                  type="number"
-                  onChange={(e) => {
-                    e.target.value = mascaraCPF(e.target.value);
-                    salvaDados(e, setDados);
-                  }}
-                />
-              </div>            
+  <label>CPF *</label>
+  <input
+    name="cpfDoAluno"
+    required
+    type="text"
+    value={cpf}
+    onChange={handleCPF}
+  />
+</div>            
 
               
 
