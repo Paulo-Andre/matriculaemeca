@@ -5,6 +5,7 @@ import ProgressBar from "./progressBar";
 import type { SetDados } from "../components/useState_SalvandoDados/salvandoDadosUseState";
 import { salvaDados } from "../components/useState_SalvandoDados/salvandoDadosUseState";
 
+
 type Props = {
   dado: SetDados;
   setDados: React.Dispatch<React.SetStateAction<SetDados>>;
@@ -16,15 +17,55 @@ export default function DadosResponsavelLegal({ dado, setDados }: Props) {
   const [tipoResponsavel, setTipoResponsavel] = useState("");
 
   // 🔹 MÁSCARAS
-  const mascaraCPF = (valor: string) => {
+   const mascaraCPF = (valor: string): string => {
     return valor
-      .replace(/\D/g, "")
+      .replace(/\D/g, "") // remove tudo que não é número
+      .slice(0, 11) // limita a 11 dígitos
       .replace(/(\d{3})(\d)/, "$1.$2")
       .replace(/(\d{3})(\d)/, "$1.$2")
-      .replace(/(\d{3})(\d{1,2})$/, "$1-$2")
-      .slice(0, 14);
+      .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
   };
-
+  const validarCPF = (cpf: string): boolean => {
+    cpf = cpf.replace(/\D/g, "");
+  
+    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+  
+    let soma = 0;
+    let resto;
+  
+    for (let i = 1; i <= 9; i++) {
+      soma += parseInt(cpf[i - 1]) * (11 - i);
+    }
+  
+    resto = (soma * 10) % 11;
+    if (resto >= 10) resto = 0;
+    if (resto !== parseInt(cpf[9])) return false;
+  
+    soma = 0;
+    for (let i = 1; i <= 10; i++) {
+      soma += parseInt(cpf[i - 1]) * (12 - i);
+    }
+  
+    resto = (soma * 10) % 11;
+    if (resto >= 10) resto = 0;
+  
+    return resto === parseInt(cpf[10]);
+  };
+  const [cpf, setCpf] = useState("");
+  const [cpfErro, setCpfErro] = useState(false)
+  
+  const handleCPF = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const valor = mascaraCPF(e.target.value);
+    setCpf(valor);
+  
+    const cpfLimpo = valor.replace(/\D/g, "");
+  
+    if (cpfLimpo.length < 11) {
+      setCpfErro(true);
+    } else {
+      setCpfErro(!validarCPF(cpfLimpo));
+    }
+  };
   const mascaraTelefone = (valor: string) => {
     return valor
       .replace(/\D/g, "")
@@ -116,12 +157,19 @@ export default function DadosResponsavelLegal({ dado, setDados }: Props) {
                     <input
                       name="cpfResponsavel"
                       required
-                      onChange={(e) => {
-                        e.target.value = mascaraCPF(e.target.value);
-                        salvaDados(e, setDados);
-                      }}
-                    />
-                  </div>
+                     value={cpf}
+                  onChange={handleCPF}
+  style={{
+      border: cpfErro ? "2px solid red" : "1px solid #ccc",
+    }}
+  />
+
+  {cpfErro && (
+    <small style={{ color: "red" }}>
+      CPF inválido
+    </small>
+  )}
+</div>
 
                   <div className="field">
                     <label>RG *</label>

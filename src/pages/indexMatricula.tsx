@@ -1,8 +1,9 @@
 import "../components/css/formulario.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import ProgressBar from "./progressBar";
 import type { SetDados } from "../components/useState_SalvandoDados/salvandoDadosUseState";
+import ProgressBar from "./progressBar";
+
 import { salvaDados } from "../components/useState_SalvandoDados/salvandoDadosUseState";
 
 type Props = {
@@ -107,7 +108,7 @@ console.log("tipo:", typeof setDados);
           <form onSubmit={handleSubmit}>
 
             {/* A. IDENTIFICAÇÃO */}
-            <div className="section-title">A. Identificação</div>
+            <div className="section-title">A. Identificação Do Aluno</div>
 
             <div className="form-grid">
 
