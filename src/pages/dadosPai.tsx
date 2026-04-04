@@ -52,7 +52,8 @@ export default function DadosPai({ dado, setDados }: Props) {
             <img src="logo_escola.svg" alt="Logo" className="header-logo" />
             <div className="header-text">
               <h1>Ficha de Matrícula</h1>
-              <p>Dados do Pai / Responsável</p>
+              <p><strong>Dados do Pai / Responsável</strong></p>
+              <p>*Se o aluno não tiver os dados do pai no registro, deixe os campos em branco.</p>
             </div>
           </div>
 
@@ -69,7 +70,7 @@ export default function DadosPai({ dado, setDados }: Props) {
             <div className="form-grid">
 
               <div className="field">
-                <label>Nome completo *</label>
+                <label>Nome completo </label>
                 <input
                   type="text"
                   name="nomePai"
@@ -79,7 +80,7 @@ export default function DadosPai({ dado, setDados }: Props) {
               </div>
 
               <div className="field">
-                <label>Nacionalidade *</label>
+                <label>Nacionalidade</label>
                 <input
                   type="text"
                   name="nacionalidadePai"
@@ -89,7 +90,7 @@ export default function DadosPai({ dado, setDados }: Props) {
               </div>
 
               <div className="field">
-                <label>Naturalidade *</label>
+                <label>Naturalidade </label>
                 <input
                   type="text"
                   name="naturalidadePai"
@@ -102,7 +103,7 @@ export default function DadosPai({ dado, setDados }: Props) {
 
               
               <div className="field">
-                <label htmlFor=""> Uf*</label>
+                <label htmlFor=""> Uf</label>
               
               <select name="ufPai"
   
@@ -143,7 +144,7 @@ export default function DadosPai({ dado, setDados }: Props) {
 </div>
 
               <div className="field">
-                <label>Data de nascimento *</label>
+                <label>Data de nascimento</label>
                 <input
                   type="date"
                   name="dataDeNascimentoPai"
@@ -153,7 +154,7 @@ export default function DadosPai({ dado, setDados }: Props) {
               </div>
 
               <div className="field">
-                <label>Profissão *</label>
+                <label>Profissão</label>
                 <input
                   type="text"
                   name="profissaoPai"
@@ -170,7 +171,7 @@ export default function DadosPai({ dado, setDados }: Props) {
             <div className="form-grid">
 
               <div className="field">
-                <label>CPF *</label>
+                <label>CPF</label>
                 <input
                   name="cpfPai"
                   
@@ -182,7 +183,7 @@ export default function DadosPai({ dado, setDados }: Props) {
               </div>
 
               <div className="field">
-                <label>RG *</label>
+                <label>RG </label>
                 <input
                   type="text"
                   name="rgPai"
@@ -192,7 +193,7 @@ export default function DadosPai({ dado, setDados }: Props) {
               </div>
 
               <div className="field">
-                <label>Órgão emissor *</label>
+                <label>Órgão emissor</label>
                 <input
                   type="text"
                   name="orgaoEmissorPai"
@@ -202,7 +203,7 @@ export default function DadosPai({ dado, setDados }: Props) {
               </div>
 
               <div className="field">
-                <label>Data de expedição *</label>
+                <label>Data de expedição</label>
                 <input
                   type="date"
                   name="dataExpedicaoPai"
@@ -219,7 +220,7 @@ export default function DadosPai({ dado, setDados }: Props) {
             <div className="form-grid">
 
               <div className="field">
-                <label>Telefone *</label>
+                <label>Telefone</label>
                 <input
                   name="telefonePai"
                   
@@ -231,7 +232,7 @@ export default function DadosPai({ dado, setDados }: Props) {
               </div>
 
               <div className="field">
-                <label>WhatsApp *</label>
+                <label>WhatsApp</label>
                 <input
                   name="whatsappPai"
                   

@@ -178,6 +178,7 @@ console.log("tipo:", typeof setDados);
                 <input
                   name="cpfDoAluno"
                   required
+                  type="number"
                   onChange={(e) => {
                     e.target.value = mascaraCPF(e.target.value);
                     salvaDados(e, setDados);
