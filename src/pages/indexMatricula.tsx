@@ -63,10 +63,10 @@ const handleCPF = (e: React.ChangeEvent<HTMLInputElement>) => {
 
   const cpfLimpo = valor.replace(/\D/g, "");
 
-  if (cpfLimpo.length === 11) {
-    setCpfErro(!validarCPF(cpfLimpo));
+  if (cpfLimpo.length < 11) {
+    setCpfErro(true);
   } else {
-    setCpfErro(false);
+    setCpfErro(!validarCPF(cpfLimpo));
   }
 };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

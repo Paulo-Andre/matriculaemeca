@@ -53,7 +53,7 @@ export default function DadosPai({ dado, setDados }: Props) {
             <div className="header-text">
               <h1>Ficha de Matrícula</h1>
               <p><strong>Dados do Pai / Responsável</strong></p>
-              <p>*Se o aluno não tiver os dados do pai no registro, deixe os campos em branco.</p>
+              
             </div>
           </div>
 
@@ -65,7 +65,7 @@ export default function DadosPai({ dado, setDados }: Props) {
           <form onSubmit={handleSubmit}>
 
             {/* A. IDENTIFICAÇÃO */}
-            <div className="section-title">A. Identificação</div>
+            <div className="section-title">A. Identificação <p> <strong>*Se o aluno não tiver os dados do pai no registro, deixe os campos em branco.</strong></p></div>
 
             <div className="form-grid">
 
