@@ -55,18 +55,20 @@ const validarCPF = (cpf: string): boolean => {
   return resto === parseInt(cpf[10]);
 };
 const [cpf, setCpf] = useState("");
+const [cpfErro, setCpfErro] = useState(false)
 
 const handleCPF = (e: React.ChangeEvent<HTMLInputElement>) => {
   const valor = mascaraCPF(e.target.value);
   setCpf(valor);
 
-  if (valor.replace(/\D/g, "").length === 11) {
-    if (!validarCPF(valor)) {
-      console.log("CPF inválido");
-    }
+  const cpfLimpo = valor.replace(/\D/g, "");
+
+  if (cpfLimpo.length === 11) {
+    setCpfErro(!validarCPF(cpfLimpo));
+  } else {
+    setCpfErro(false);
   }
 };
- 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -214,8 +216,17 @@ console.log("tipo:", typeof setDados);
     type="text"
     value={cpf}
     onChange={handleCPF}
+  style={{
+      border: cpfErro ? "2px solid red" : "1px solid #ccc",
+    }}
   />
-</div>            
+
+  {cpfErro && (
+    <small style={{ color: "red" }}>
+      CPF inválido
+    </small>
+  )}
+</div>         
 
               
 
