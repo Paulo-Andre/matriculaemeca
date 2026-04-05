@@ -89,19 +89,19 @@ console.log("tipo:", typeof setDados);
     <div className="formulario-page">
       <div className="formulario-container">
 
-        {/* HEADER */}
-        <header className="formulario-header">
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <div className="header-text">
-              <h1>Ficha de Matrícula</h1>
+        {/* HEADER */}                        
+          <header className="formulario-header">
+                  <div className="header-snd">
+                    <img src="logo_escola.svg" alt="Logo" className="header-logo" />
+                    <div className="header-text">
+                      <h1>Ficha de Matrícula</h1>
               <p>Dados do Aluno</p>
-            </div>
-
-            <img src="logo_escola.svg" alt="Logo" style={{ width: "50px" }} className="imagem" />
-          </div>
-
-          <ProgressBar etapaAtual={0} />
-        </header>
+                      
+                    </div>
+                  </div>
+        
+                  <ProgressBar etapaAtual={0} />
+                </header>
 
         {/* FORM */}
         <div className="form-card">

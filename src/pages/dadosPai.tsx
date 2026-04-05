@@ -107,7 +107,7 @@ export default function DadosPai({ dado, setDados }: Props) {
           <form onSubmit={handleSubmit}>
 
             {/* A. IDENTIFICAÇÃO */}
-            <div className="section-title"> <h1>A. Dados do Pai  </h1> <p><strong>*Se o aluno não tiver os dados do pai no registro, deixe os campos em branco.</strong></p></div>
+            <div className="section-title"> A. Dados do Pai<br></br><p><strong>*Se o aluno não tiver os dados do pai no registro, deixe os campos em branco.</strong></p></div>
 
             <div className="form-grid">
 
