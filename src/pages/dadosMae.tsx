@@ -123,7 +123,79 @@ export default function DadosMae({ dado, setDados }: Props) {
 
               <div className="field">
                 <label>Nacionalidade *</label>
-                <input name="nacionalidadeMae" required onChange={(e) => salvaDados(e, setDados)} />
+                <input name="nacionalidadeMae" list="lista-nacionalidades" required onChange={(e) => salvaDados(e, setDados)} />
+                
+                <datalist id="lista-nacionalidades">
+  <option value="Brasileiro">Brasileiro</option>
+  <option value="Brasileira">Brasileira</option>
+  <option value="Americano">Americano</option>
+  <option value="Americana">Americana</option>
+  <option value="Português">Português</option>
+  <option value="Portuguesa">Portuguesa</option>
+  <option value="Argentino">Argentino</option>
+  <option value="Argentina">Argentina</option>
+  <option value="Francês">Francês</option>
+  <option value="Francesa">Francesa</option>
+  <option value="Alemão">Alemão</option>
+  <option value="Alemã">Alemã</option>
+  <option value="Espanhol">Espanhol</option>
+  <option value="Espanhola">Espanhola</option>
+  <option value="Italiano">Italiano</option>
+  <option value="Italiana">Italiana</option>
+  <option value="Britânico">Britânico</option>
+  <option value="Britânica">Britânica</option>
+  <option value="Canadense">Canadense</option>
+  <option value="Japonês">Japonês</option>
+  <option value="Japonesa">Japonesa</option>
+  <option value="Chinês">Chinês</option>
+  <option value="Chinesa">Chinesa</option>
+  <option value="Coreano">Coreano</option>
+  <option value="Coreana">Coreana</option>
+  <option value="Mexicano">Mexicano</option>
+  <option value="Mexicana">Mexicana</option>
+  <option value="Chileno">Chileno</option>
+  <option value="Chilena">Chilena</option>
+  <option value="Colombiano">Colombiano</option>
+  <option value="Colombiana">Colombiana</option>
+  <option value="Uruguaio">Uruguaio</option>
+  <option value="Uruguaia">Uruguaia</option>
+  <option value="Paraguaio">Paraguaio</option>
+  <option value="Paraguaia">Paraguaia</option>
+  <option value="Peruano">Peruano</option>
+  <option value="Peruana">Peruana</option>
+  <option value="Angolano">Angolano</option>
+  <option value="Angolana">Angolana</option>
+  <option value="Moçambicano">Moçambicano</option>
+  <option value="Moçambicana">Moçambicana</option>
+  <option value="Sul-africano">Sul-africano</option>
+  <option value="Sul-africana">Sul-africana</option>
+  <option value="Indiano">Indiano</option>
+  <option value="Indiana">Indiana</option>
+  <option value="Australiano">Australiano</option>
+  <option value="Australiana">Australiana</option>
+  <option value="Neozelandês">Neozelandês</option>
+  <option value="Neozelandesa">Neozelandesa</option>
+  <option value="Suíço">Suíço</option>
+  <option value="Suíça">Suíça</option>
+  <option value="Belga">Belga</option>
+  <option value="Holandês">Holandês</option>
+  <option value="Holandesa">Holandesa</option>
+  <option value="Sueco">Sueco</option>
+  <option value="Sueca">Sueca</option>
+  <option value="Norueguês">Norueguês</option>
+  <option value="Norueguesa">Norueguesa</option>
+  <option value="Dinamarquês">Dinamarquês</option>
+  <option value="Dinamarquesa">Dinamarquesa</option>
+  <option value="Finlandês">Finlandês</option>
+  <option value="Finlandesa">Finlandesa</option>
+  <option value="Russo">Russo</option>
+  <option value="Russa">Russa</option>
+  <option value="Turco">Turco</option>
+  <option value="Turca">Turca</option>
+  <option value="Saudita">Saudita</option>
+  <option value="Emiratense">Emiratense</option>
+  <option value="Israelense">Israelense</option>
+</datalist>
               </div>
 
               <div className="field">
