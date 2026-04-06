@@ -90,24 +90,20 @@ export default function DadosHistoricoCrianca({ dado, setDados }: Props) {
       <div className="formulario-container">
 
         {/* HEADER */}
-        <header className="formulario-header">
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <div className="header-text">
-              <h1>Ficha de Matrícula</h1>
+       
+         
+                <header className="formulario-header">
+                          <div className="header-brand">
+                            <img src="logo_escola.svg" alt="Logo" className="header-logo" />
+                            <div className="header-text">
+                             <h1>Ficha de Matrícula</h1>
               <p>Histórico da Criança</p>
-            </div>
-
-            <img src="logo_escola.svg" alt="Logo" style={{ width: "50px" }} />
-          </div>
-
-          <ProgressBar etapaAtual={6} />
-        </header>
+                              
+                            </div>
+                          </div>
+                
+                          <ProgressBar etapaAtual={6} />
+                        </header>
 
         {/* FORM */}
         <div className="form-card">

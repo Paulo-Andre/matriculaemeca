@@ -38,22 +38,19 @@ export default function EstadoCivil({ dado, setDados }: Props) {
       <div className="formulario-container">
 
         {/* HEADER */}
-        <header className="formulario-header">
-          <div style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center"
-          }}>
-            <div className="header-text">
-              <h1>Ficha de Matrícula</h1>
+       
+          <header className="formulario-header">
+                                  <div className="header-brand">
+                                    <img src="logo_escola.svg" alt="Logo" className="header-logo" />
+                                    <div className="header-text">
+                                     <h1>Ficha de Matrícula</h1>
               <p>Estado Civil e Contatos</p>
-            </div>
-
-            <img src="logo_escola.svg" alt="Logo" style={{ width: "50px" }} className="imagem" />
-          </div>
-
-          <ProgressBar etapaAtual={4} />
-        </header>
+                                      
+                                    </div>
+                                  </div>
+                        
+                                  <ProgressBar etapaAtual={4} />
+                                </header>
 
         {/* FORM */}
         <div className="form-card">

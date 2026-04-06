@@ -91,22 +91,19 @@ export default function DadosResponsavelLegal({ dado, setDados }: Props) {
       <div className="formulario-container">
 
         {/* HEADER */}
+        
         <header className="formulario-header">
-          <div style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center"
-          }}>
-            <div className="header-text">
-              <h1>Ficha de Matrícula</h1>
+                                          <div className="header-brand">
+                                            <img src="logo_escola.svg" alt="Logo" className="header-logo" />
+                                            <div className="header-text">
+                                            <h1>Ficha de Matrícula</h1>
               <p>Responsável Legal</p>
-            </div>
-
-            <img src="logo_escola.svg" alt="Logo" style={{ width: "50px" }} className="imagem" />
-          </div>
-
-          <ProgressBar etapaAtual={3} />
-        </header>
+                                              
+                                            </div>
+                                          </div>
+                                
+                                          <ProgressBar etapaAtual={3} />
+                                        </header>
 
         {/* FORM */}
         <div className="form-card">
@@ -172,18 +169,18 @@ export default function DadosResponsavelLegal({ dado, setDados }: Props) {
 </div>
 
                   <div className="field">
-                    <label>RG *</label>
-                    <input type="text" name="rgResponsavel" required onChange={(e) => salvaDados(e, setDados)} />
+                    <label>RG </label>
+                    <input type="text" name="rgResponsavel"  onChange={(e) => salvaDados(e, setDados)} />
                   </div>
 
                   <div className="field">
-                    <label>Órgão emissor *</label>
-                    <input name="orgaoEmissorResponsavel" required onChange={(e) => salvaDados(e, setDados)} />
+                    <label>Órgão emissor </label>
+                    <input name="orgaoEmissorResponsavel" onChange={(e) => salvaDados(e, setDados)} />
                   </div>
 
                   <div className="field">
-                    <label>Data de expedição *</label>
-                    <input type="date" name="dataExpedicaoResponsavel" required onChange={(e) => salvaDados(e, setDados)} />
+                    <label>Data de expedição </label>
+                    <input type="date" name="dataExpedicaoResponsavel"  onChange={(e) => salvaDados(e, setDados)} />
                   </div>
 
                   <div className="field">

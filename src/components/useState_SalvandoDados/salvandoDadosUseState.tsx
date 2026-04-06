@@ -27,6 +27,7 @@ export type SetDados = {
   descricaoAlergia: string;
   temIrmaosEscola: "sim" | "nao";
   nomeIrmao: string;
+  escolaAnteriorAluno:string;
 
   // PAI
   nomePai: string;
@@ -156,6 +157,7 @@ export const estadoInicial: SetDados = {
   descricaoAlergia: "",
   temIrmaosEscola: "nao",
   nomeIrmao: "",
+  escolaAnteriorAluno:"",
 
   nomePai: "",
   nacionalidadePai: "",

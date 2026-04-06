@@ -330,9 +330,10 @@ console.log("tipo:", typeof setDados);
             <div className="form-grid">
 
               <div className="field">
-                <label>Possui laudo?</label>
+                <label>Possui laudo?*</label>
                 <select
                   name="possuiLaudoAluno"
+                  required
                   onChange={(e) => {
                     setMostrarLaudo(e.target.value === "sim");
                     salvaDados(e, setDados);
@@ -346,14 +347,15 @@ console.log("tipo:", typeof setDados);
 
               {mostrarLaudo && (
                 <div className="field">
-                  <label>Descreva o laudo</label>
-                  <input name="descricaoLaudo" onChange={(e) => salvaDados(e, setDados)} />
+                  <label>Descreva o laudo*</label>
+                  <input name="descricaoLaudo" required onChange={(e) => salvaDados(e, setDados)} />
                 </div>
               )}
 
               <div className="field">
-                <label>Recebe benefício?</label>
+                <label>Recebe benefício?*</label>
                 <select
+                required
                   name="recebeBeneficioAluno"
                   onChange={(e) => {
                     setMostrarBeneficio(e.target.value === "sim");
@@ -368,15 +370,16 @@ console.log("tipo:", typeof setDados);
 
               {mostrarBeneficio && (
                 <div className="field">
-                  <label>Qual benefício?</label>
-                  <input name="descricaoBeneficio" onChange={(e) => salvaDados(e, setDados)} />
+                  <label>Qual benefício?*</label>
+                  <input name="descricaoBeneficio" required onChange={(e) => salvaDados(e, setDados)} />
                 </div>
               )}
 
               <div className="field">
-                <label>Possui alergia?</label>
+                <label>Possui alergia?*</label>
                 <select
                   name="alergiaAluno"
+                  required
                   onChange={(e) => {
                     setMostrarAlergia(e.target.value === "sim");
                     salvaDados(e, setDados);
@@ -390,15 +393,17 @@ console.log("tipo:", typeof setDados);
 
               {mostrarAlergia && (
                 <div className="field">
-                  <label>Qual alergia?</label>
-                  <input name="descricaoAlergia" onChange={(e) => salvaDados(e, setDados)} />
+                  <label>Qual alergia?*</label>
+                  
+                  <input name="descricaoAlergia" required onChange={(e) => salvaDados(e, setDados)} />
                 </div>
               )}
 
               <div className="field">
-                <label>Tem irmão na escola?</label>
+                <label>Tem irmão na escola?*</label>
                 <select
                   name="temIrmaosEscola"
+                  required
                   onChange={(e) => {
                     setMostrarIrmao(e.target.value === "sim");
                     salvaDados(e, setDados);
@@ -412,12 +417,17 @@ console.log("tipo:", typeof setDados);
 
               {mostrarIrmao && (
                 <div className="field">
-                  <label>Nome do irmão</label>
-                  <input name="nomeIrmao" onChange={(e) => salvaDados(e, setDados)} />
+                  <label>Nome do irmão*</label>
+                  <input name="nomeIrmao" required onChange={(e) => salvaDados(e, setDados)} />
                 </div>
               )}
 
+
             </div>
+            <div className="field">
+                <label>Nome da Escola Anterior(deixe em branco se nao tiver) </label>
+                <input type="text" name="escolaAnteriorAluno"    onChange={(e) => salvaDados(e, setDados)}/>
+              </div>
 
             {/* BOTÕES */}
             <div className="form-actions">
