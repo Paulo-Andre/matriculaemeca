@@ -103,7 +103,7 @@ onBlur={(e) => buscarCEP(e.target.value)}
               </div>
 
               <div className="field">
-                <label>Rua *</label>
+                <label>Rua e número *</label>
                 <input name="rua" value={dado.rua || ""} required onChange={(e) => salvaDados(e, setDados)} />
               </div>
 
