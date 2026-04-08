@@ -60,6 +60,7 @@ const [cpfErro, setCpfErro] = useState(false)
 
 const handleCPF = (e: React.ChangeEvent<HTMLInputElement>) => {
   const valor = mascaraCPF(e.target.value);
+
   setCpf(valor);
 
   const cpfLimpo = valor.replace(/\D/g, "");
@@ -69,6 +70,19 @@ const handleCPF = (e: React.ChangeEvent<HTMLInputElement>) => {
   } else {
     setCpfErro(!validarCPF(cpfLimpo));
   }
+
+  // 🔥 FORÇA salvar no mesmo padrão dos outros inputs
+  salvaDados(
+    {
+      ...e,
+      target: {
+        ...e.target,
+        name: "cpfDoAluno",
+        value: valor, // salva com máscara
+      },
+    } as React.ChangeEvent<HTMLInputElement>,
+    setDados
+  );
 };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

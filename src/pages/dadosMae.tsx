@@ -52,18 +52,32 @@ export default function DadosMae({ dado, setDados }: Props) {
   const [cpf, setCpf] = useState("");
   const [cpfErro, setCpfErro] = useState(false)
   
-  const handleCPF = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const valor = mascaraCPF(e.target.value);
-    setCpf(valor);
-  
-    const cpfLimpo = valor.replace(/\D/g, "");
-  
-    if (cpfLimpo.length < 11) {
-      setCpfErro(true);
-    } else {
-      setCpfErro(!validarCPF(cpfLimpo));
-    }
-  };
+   const handleCPF = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const valor = mascaraCPF(e.target.value);
+
+  setCpf(valor);
+
+  const cpfLimpo = valor.replace(/\D/g, "");
+
+  if (cpfLimpo.length < 11) {
+    setCpfErro(true);
+  } else {
+    setCpfErro(!validarCPF(cpfLimpo));
+  }
+
+  // 🔥 FORÇA salvar no mesmo padrão dos outros inputs
+  salvaDados(
+    {
+      ...e,
+      target: {
+        ...e.target,
+        name: "cpfMae",
+        value: valor, // salva com máscara
+      },
+    } as React.ChangeEvent<HTMLInputElement>,
+    setDados
+  );
+};
   const mascaraTelefone = (valor: string) => {
     return valor
       .replace(/\D/g, "")
